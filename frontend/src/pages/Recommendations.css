@@ -1,0 +1,354 @@
+.recommendations-page {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 36px 24px;
+}
+
+.recommendations-page .page-header {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 24px 26px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: linear-gradient(132deg, #3f6838 0%, #5b8b46 50%, #7caf5f 100%);
+  box-shadow: 0 12px 30px rgba(50, 87, 40, 0.16);
+}
+
+.recommendations-page .page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.22;
+  background-image:
+    radial-gradient(circle at 18% 35%, #fff 1px, transparent 1px),
+    radial-gradient(circle at 72% 20%, #fff 1px, transparent 1px),
+    radial-gradient(circle at 58% 78%, #fff 1.5px, transparent 1.5px);
+  background-size: 52px 52px, 72px 72px, 92px 92px;
+}
+
+.recommendations-page .page-header h1 {
+  position: relative;
+  z-index: 1;
+  font-size: 22px;
+  color: #f4fbeb;
+  font-family: 'Georgia', serif;
+  letter-spacing: 0.6px;
+}
+
+.date-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+  align-items: center;
+}
+
+.date-tag {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--text-muted);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.date-tag.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.date-tag:hover:not(.active) {
+  border-color: var(--accent);
+  color: var(--primary-light);
+}
+
+.date-calendar-box {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  background: var(--bg-warm);
+}
+
+.date-calendar-input {
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  padding: 6px 10px;
+  background: #fff;
+  color: var(--text-primary);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.date-selected-badge {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--accent-bg);
+  color: var(--primary-light);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.date-range-hint {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Toolbar */
+.results-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.results-count {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.view-toggle {
+  display: flex;
+  gap: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.toggle-btn {
+  background: var(--bg-card);
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-btn.active {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
+  color: #fff;
+}
+
+.toggle-btn:hover:not(.active) {
+  background: var(--accent-bg);
+}
+
+/* Grid cards */
+.rec-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.rec-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfef9 100%);
+  border: 1px solid #d7e5d2;
+  border-radius: var(--radius-lg);
+  padding: 20px 22px 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(52, 84, 45, 0.06);
+}
+
+.rec-card:hover {
+  border-color: #9fc489;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.rec-card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.source-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.badge-iclr { background: #FFF3CD; color: #856404; }
+.badge-arxiv { background: #FADBD8; color: #922B21; }
+.badge-ieee { background: #D6EAF8; color: #21618C; }
+.badge-elsevier { background: #E8DAEF; color: #6C3483; }
+.badge-tsg { background: #D5F5E3; color: #1E8449; }
+.badge-ae { background: #FCF3CF; color: #B7950B; }
+.badge-crossref { background: #E8E8E8; color: #555; }
+.badge-tste { background: #D1F2EB; color: #117A65; }
+.badge-tie { background: #FDEBD0; color: #CA6F1E; }
+.badge-tpwrs { background: #D6D5F8; color: #5B2C8C; }
+.badge-rser { background: #D0ECE7; color: #0E6655; }
+.badge-energy { background: #E8F8F5; color: #148F77; }
+.badge-cvpr { background: #F5B7B1; color: #922B21; }
+.badge-acl { background: #AED6F1; color: #1A5276; }
+.badge-aaai { background: #D4E6F1; color: #1B4F72; }
+.badge-icml { background: #D7BDE2; color: #6C3483; }
+.badge-kdd { background: #A3E4D7; color: #0B5345; }
+.badge-ijcai { background: #C5CAE9; color: #283593; }
+.badge-neurips { background: #D1C4E9; color: #4527A0; }
+
+.ai-badge {
+  font-size: 10px;
+  background: #eaf5df;
+  color: #2f5c34;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  border: 1px solid #cde3bd;
+}
+
+.rec-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f3527;
+  line-height: 1.5;
+  font-family: 'Georgia', 'Noto Serif SC', serif;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.rec-card-authors {
+  font-size: 12px;
+  color: #3d5243;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rec-card-abstract {
+  font-size: 12px;
+  color: #2c4032;
+  line-height: 1.7;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+.rec-card-figure {
+  margin: 6px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  max-height: 160px;
+}
+
+.rec-card-figure img {
+  width: 100%;
+  height: 100%;
+  max-height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.rec-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  padding-top: 10px;
+  border-top: 1px solid #dde9d8;
+  color: #52665a;
+  margin-top: auto;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.rec-card-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rec-source-link {
+  color: #315d39;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 11px;
+}
+.rec-source-link:hover {
+  color: #4c8b3f;
+  text-decoration: underline;
+}
+
+.rec-card-link {
+  color: #4f8a43;
+  font-weight: 500;
+}
+
+.empty-icon { margin-bottom: 16px; }
+.empty-hint { font-size: 12px; color: var(--text-muted); margin-top: 6px; }
+
+@media (max-width: 768px) {
+  .rec-grid { grid-template-columns: 1fr; }
+  .date-filter {
+    align-items: stretch;
+  }
+  .date-calendar-box {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .date-calendar-input {
+    min-width: 0;
+    flex: 1;
+  }
+}
+
+/* Keywords & rating on rec cards */
+.rec-card-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.rec-keyword {
+  font-size: 10px;
+  background: linear-gradient(135deg, #f1f8e6, #deefd1);
+  color: #2f5732;
+  padding: 1px 8px;
+  border-radius: 8px;
+  font-weight: 500;
+  border: 1px solid rgba(53, 94, 50, 0.16);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.rec-category {
+  font-size: 9px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 8px;
+  background: #efe4f7;
+  color: #583174;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.rec-rating {
+  font-size: 11px;
+  color: #b9780c;
+  font-weight: 600;
+  margin-left: auto;
+}

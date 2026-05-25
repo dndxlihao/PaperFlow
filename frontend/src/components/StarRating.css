@@ -1,0 +1,22 @@
+.star-rating {
+  display: inline-flex;
+  gap: 2px;
+  vertical-align: middle;
+}
+
+.star {
+  transition: color 0.15s, transform 0.15s;
+  user-select: none;
+}
+
+.star:hover {
+  transform: scale(1.2);
+}
+
+.star-filled {
+  color: #f5a623;
+}
+
+.star-empty {
+  color: #d0d0d0;
+}

@@ -1,0 +1,88 @@
+.library-page {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 36px 24px;
+}
+
+.library-page .page-header {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+  padding: 20px 24px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: linear-gradient(132deg, #3f6838 0%, #5b8b46 50%, #7caf5f 100%);
+  box-shadow: 0 12px 30px rgba(50, 87, 40, 0.16);
+}
+
+.library-page .page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.22;
+  background-image:
+    radial-gradient(circle at 18% 35%, #fff 1px, transparent 1px),
+    radial-gradient(circle at 72% 20%, #fff 1px, transparent 1px),
+    radial-gradient(circle at 58% 78%, #fff 1.5px, transparent 1.5px);
+  background-size: 52px 52px, 72px 72px, 92px 92px;
+}
+
+.library-page .page-header > * {
+  position: relative;
+  z-index: 1;
+}
+
+.library-page .page-header h1 {
+  font-size: 22px;
+  color: #f4fbeb;
+  font-family: 'Georgia', serif;
+  letter-spacing: 0.6px;
+}
+
+.library-count {
+  font-size: 13px;
+  color: var(--text-secondary);
+  background: rgba(255,255,255,0.88);
+  border: 1px solid rgba(255,255,255,0.5);
+  padding: 5px 14px;
+  border-radius: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.library-page .paper-title {
+  color: var(--text-primary);
+}
+
+.library-page .paper-journal {
+  color: var(--primary-light);
+  font-weight: 600;
+}
+
+.library-page .paper-meta {
+  color: var(--text-secondary);
+}
+
+.library-page .paper-abstract {
+  color: var(--text-secondary);
+}
+
+.library-page .paper-summary-badge {
+  color: var(--primary);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.page-info {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}

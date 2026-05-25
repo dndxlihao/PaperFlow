@@ -1,0 +1,69 @@
+# ----------------------------
+# OS / IDE
+# ----------------------------
+.DS_Store
+.idea/
+.vscode/
+
+# ----------------------------
+# Python
+# ----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+env/
+
+# ----------------------------
+# Node / Frontend build
+# ----------------------------
+frontend/node_modules/
+frontend/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ----------------------------
+# Secrets / Local env
+# ----------------------------
+.env
+backend/.env
+*.pem
+*.key
+
+# ----------------------------
+# Runtime logs / temp
+# ----------------------------
+*.log
+*.pid
+*.tmp
+tmp/
+temp/
+
+# ----------------------------
+# Data, cache and user privacy (DO NOT COMMIT)
+# ----------------------------
+docs/
+figures/
+pic/
+pic/avatars/
+backend/docs/
+backend/uploads/
+backend/embeddings_cache.npz
+backend/knowledge_trends_cache.json
+
+# Local databases / dumps
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+*.dump
+*.pptx

@@ -1,0 +1,364 @@
+.creator-studio {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 30px 24px 46px;
+}
+
+.creator-hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  padding: 34px 32px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(136, 188, 127, 0.32);
+  background:
+    radial-gradient(circle at 88% 12%, rgba(255, 246, 208, 0.6) 0%, rgba(255, 246, 208, 0) 36%),
+    linear-gradient(135deg, #295a39 0%, #3d7e4c 48%, #6ea75b 100%);
+  box-shadow: 0 18px 34px rgba(48, 89, 56, 0.18);
+}
+
+.creator-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px);
+  background-size: 13px 13px;
+  opacity: 0.34;
+  pointer-events: none;
+}
+
+.creator-hero-glow {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  right: -120px;
+  top: -120px;
+  background: radial-gradient(circle, rgba(255, 243, 190, 0.55) 0%, rgba(255, 243, 190, 0) 72%);
+}
+
+.creator-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.creator-kicker {
+  display: inline-block;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  color: rgba(236, 252, 242, 0.85);
+  border: 1px solid rgba(231, 247, 235, 0.44);
+  border-radius: 999px;
+  padding: 5px 14px;
+  margin-bottom: 10px;
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+}
+
+.creator-hero h1 {
+  color: #fff;
+  font-size: 45px;
+  letter-spacing: 2px;
+  margin: 4px 0 8px;
+  font-family: 'Noto Serif SC', 'Source Han Serif SC', serif;
+}
+
+.creator-hero p {
+  color: rgba(236, 249, 240, 0.92);
+  font-size: 16px;
+  max-width: 760px;
+}
+
+.creator-panel {
+  border: 1px solid var(--border-light);
+  border-radius: 18px;
+  background: #fff;
+  padding: 20px 18px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 14px;
+}
+
+.creator-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.creator-panel-head h2 {
+  color: #2d5936;
+  font-size: 24px;
+  font-family: 'Noto Serif SC', 'Source Han Serif SC', serif;
+}
+
+.creator-panel-head span {
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.creator-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.creator-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.creator-input,
+.creator-textarea,
+.creator-file-input {
+  width: 100%;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--text-primary);
+  font-size: 13px;
+  padding: 10px 11px;
+}
+
+.creator-input:focus,
+.creator-textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.creator-input-wide {
+  width: 100%;
+}
+
+.creator-textarea {
+  resize: vertical;
+  line-height: 1.7;
+}
+
+.creator-form-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.creator-file-input {
+  max-width: 320px;
+  padding: 8px 10px;
+}
+
+.creator-msg {
+  font-size: 12px;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.creator-msg.error {
+  color: #b42318;
+  background: #fff2f2;
+  border: 1px solid #f3b8b4;
+}
+
+.creator-msg.success {
+  color: #1f6b39;
+  background: #eefaf1;
+  border: 1px solid #a8d6b2;
+}
+
+.creator-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.creator-filter-btn {
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--text-secondary);
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.creator-filter-btn.active {
+  background: #3f8352;
+  color: #fff;
+  border-color: #3f8352;
+}
+
+.creator-empty {
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding: 8px 2px;
+}
+
+.creator-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.creator-item {
+  border: 1px solid #dce8db;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #ffffff 0%, #fcfef9 100%);
+  padding: 12px 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.creator-item-main h3 {
+  margin: 0 0 7px;
+  color: #274c35;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.creator-meta {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 11px;
+  border-radius: 999px;
+  padding: 3px 8px;
+}
+
+.tag.review-pending {
+  color: #855500;
+  background: #fff7df;
+  border: 1px solid #f4d27b;
+}
+
+.tag.review-approved {
+  color: #1f6b39;
+  background: #eefaf1;
+  border: 1px solid #a8d6b2;
+}
+
+.tag.review-rejected {
+  color: #b42318;
+  background: #fff1f1;
+  border: 1px solid #f3b8b4;
+}
+
+.tag.process-pending,
+.tag.process-processing {
+  color: #0f5a6f;
+  background: #ebf8fb;
+  border: 1px solid #9fd6e2;
+}
+
+.tag.process-ready {
+  color: #225a35;
+  background: #ebf7ed;
+  border: 1px solid #b8ddb9;
+}
+
+.tag.process-failed {
+  color: #b42318;
+  background: #fff2f2;
+  border: 1px solid #f3b8b4;
+}
+
+.tag.neutral {
+  color: #486258;
+  background: #f0f5ef;
+  border: 1px solid #dde7db;
+}
+
+.creator-note {
+  margin-top: 8px;
+  color: #7a4f21;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.creator-item-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 120px;
+}
+
+.creator-modal-mask {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 26, 16, 0.42);
+  z-index: 180;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.creator-modal {
+  width: min(520px, 100%);
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.22);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.creator-modal h3 {
+  color: #2a5336;
+  font-size: 22px;
+  font-family: 'Noto Serif SC', 'Source Han Serif SC', serif;
+}
+
+.creator-modal p {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.creator-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .creator-studio {
+    padding: 18px 14px 32px;
+  }
+
+  .creator-hero {
+    padding: 24px 18px;
+  }
+
+  .creator-hero h1 {
+    font-size: 34px;
+  }
+
+  .creator-hero p {
+    font-size: 14px;
+  }
+
+  .creator-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .creator-panel-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .creator-item {
+    flex-direction: column;
+  }
+
+  .creator-item-actions {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

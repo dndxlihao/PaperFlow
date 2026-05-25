@@ -1,0 +1,150 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 56px);
+  background: var(--bg-warm);
+}
+
+.auth-card {
+  background: var(--bg-card);
+  padding: 44px 40px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 560px;
+}
+
+.auth-card h2 {
+  text-align: center;
+  margin-bottom: 28px;
+  color: var(--primary);
+  font-family: 'Georgia', serif;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+}
+
+.auth-error {
+  background: var(--danger-bg);
+  color: var(--danger);
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+  font-size: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+  background: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(82,183,136,0.12);
+}
+
+.pref-select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  font-size: 14px;
+}
+
+.pref-section {
+  margin: 12px 0 18px;
+  padding: 14px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  background: #fbfffc;
+}
+
+.pref-section h3 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: var(--primary);
+}
+
+.tag-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-option {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--text-secondary);
+  padding: 4px 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.tag-option.active {
+  background: var(--accent-bg);
+  border-color: var(--accent);
+  color: var(--primary);
+}
+
+.custom-input-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.custom-input-row .btn {
+  white-space: nowrap;
+}
+
+.custom-input-row input {
+  flex: 1;
+}
+
+.auth-switch {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 13px;
+  color: var(--text-muted);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.auth-switch a {
+  color: var(--primary-light);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .auth-card {
+    padding: 28px 20px;
+    max-width: 96%;
+  }
+
+  .custom-input-row {
+    flex-direction: column;
+  }
+}
