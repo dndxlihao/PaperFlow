@@ -1,33 +1,37 @@
-# PaperFlow
+<div align="center">
+  <h1>PaperFlow</h1>
+  <p><b>面向学术协作与论文内容沉淀的一体化平台</b></p>
+  <p>检索 · 阅读 · 推荐 · 讨论 · 投稿 · 审核 · 运营分析</p>
+  <p>
+    <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-2ea44f" alt="license"></a>
+    <img src="https://img.shields.io/badge/Backend-Flask%20%7C%20SQLAlchemy-1f6feb" alt="backend">
+    <img src="https://img.shields.io/badge/Frontend-React%20%7C%20Vite-00bcd4" alt="frontend">
+    <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB" alt="python">
+    <img src="https://img.shields.io/badge/Node.js-18%2B-3c873a" alt="node">
+    <img src="https://img.shields.io/badge/Status-Active-2ea44f" alt="status">
+  </p>
+</div>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
-![Backend](https://img.shields.io/badge/Backend-Flask%20%7C%20SQLAlchemy-1f6feb)
-![Frontend](https://img.shields.io/badge/Frontend-React%20%7C%20Vite-61dafb)
-![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB)
-![Node](https://img.shields.io/badge/Node.js-18%2B-339933)
-![Status](https://img.shields.io/badge/Status-Active-success)
-
-> 一个面向学术协作与论文内容沉淀的平台。  
-> 支持论文检索、AI 总结、评论互动、创作者投稿、管理员审核与知识热点分析。
+---
 
 ## 🧭 项目定位
 
 PaperFlow 聚焦“学术内容协同生产”：
 
-- 📚 从多来源沉淀论文卡片（系统库 + 创作者投稿）。
-- 🤖 基于论文内容生成摘要、关键词和图示解读。
-- 👥 支持评论、点赞、回复、@提醒与站内消息。
-- 🛡️ 通过审核流程保障卡片质量与可追溯性。
-- 📈 通过后台与知识库统计支撑运营迭代。
+- 📚 从多来源沉淀论文卡片（系统库 + 创作者投稿）
+- 🤖 基于论文内容生成 AI 摘要、关键词和图示解读
+- 👥 支持评论、回复、点赞、@提醒、站内消息
+- 🛡️ 通过审核流确保内容质量与可追溯性
+- 📈 通过后台统计和知识热点追踪支撑运营迭代
 
 ## ✨ 核心功能
 
-- 🗂️ `系统论文库`：分页浏览、分类筛选、关键词检索、详情查看。
-- 🌞 `每日推荐`：定时任务更新，支持偏好权重与推荐策略。
-- 🧠 `知识库`：语义检索（RAG）与热点方向追踪。
-- 📝 `创作者中心`：用户上传 PDF 生成卡片，管理员审核后公开。
-- 💬 `评论系统`：评论、回复、点赞、@好友提醒、站内通知。
-- 🛠️ `管理员后台`：用户管理、投稿审核、纠错审核、推荐任务监控。
+- 🗂️ `系统论文库`：分页浏览、分类筛选、关键词检索、详情查看
+- 🌞 `每日推荐`：定时任务更新，支持偏好权重与推荐策略
+- 🧠 `知识库`：语义检索（RAG）与热点方向追踪
+- 📝 `创作者中心`：上传 PDF 自动生成卡片，管理员审核后公开
+- 💬 `评论系统`：评论/回复/点赞/@提醒/通知
+- 🛠️ `管理员后台`：用户管理、投稿审核、纠错审核、推荐任务监控
 
 ## 🧱 技术栈
 
@@ -35,7 +39,7 @@ PaperFlow 聚焦“学术内容协同生产”：
 |---|---|
 | 前端 | React 18 + Vite + React Router + Axios |
 | 后端 | Flask + SQLAlchemy + APScheduler |
-| 数据库 | MySQL |
+| 数据库 | MySQL 8.x |
 | AI 能力 | OpenAI SDK（兼容 DeepSeek Base URL） |
 | 文献处理 | requests / selenium / pdfplumber |
 | 鉴权 | JWT |
@@ -44,17 +48,17 @@ PaperFlow 聚焦“学术内容协同生产”：
 
 ```mermaid
 flowchart LR
-  U[👤 用户浏览器] --> FE[🎨 Frontend<br/>React + Vite]
-  FE -->|/api| BE[⚙️ Backend API<br/>Flask Blueprints]
+  U[👤 用户浏览器] --> FE[🎨 Frontend React + Vite]
+  FE -->|/api| BE[⚙️ Flask API]
 
-  subgraph BackendServices[🧩 后端服务层]
-    Auth[auth.py<br/>登录/鉴权]
-    Papers[papers.py<br/>论文/评论/投稿]
-    Rec[recommend.py<br/>推荐接口]
-    KB[knowledge.py<br/>知识库检索]
-    Admin[admin.py<br/>后台运营]
-    Sch[scheduler.py<br/>定时任务]
-    DU[daily_update.py<br/>每日推荐生成]
+  subgraph B[后端服务层]
+    Auth[auth.py 登录/鉴权]
+    Papers[papers.py 论文/评论/投稿]
+    Rec[recommend.py 推荐]
+    KB[knowledge.py 知识库]
+    Admin[admin.py 管理后台]
+    Sch[scheduler.py 定时任务]
+    DU[daily_update.py 每日推荐更新]
   end
 
   BE --> Auth
@@ -64,10 +68,7 @@ flowchart LR
   BE --> Admin
   BE --> Sch
   Sch --> DU
-
-  DU --> LLM[🤖 LLM API<br/>DeepSeek/OpenAI Compatible]
-  Papers --> LLM
-  KB --> IDX[🧠 向量索引/检索缓存]
+  DU --> LLM[🤖 LLM API]
 
   Auth --> DB[(🗄️ MySQL)]
   Papers --> DB
@@ -103,36 +104,36 @@ PaperFlow/
 └── README.md
 ```
 
-## 🚀 新手一步一步启动
+## 🚀 新手一步一步启动（从 0 到可用）
 
-### 0) 环境准备
+### Step 0. 准备运行环境
 
 - `Python 3.10+`
 - `Node.js 18+`（推荐 18 或 20）
 - `MySQL 8.x`
-- （可选）`Chrome`：用于部分站点 PDF 下载兜底
+- （可选）`Google Chrome`（用于部分站点 PDF 下载兜底）
 
-### 1) 克隆项目
+### Step 1. 克隆项目
 
 ```bash
 git clone https://github.com/dndxlihao/PaperFlow.git
 cd PaperFlow
 ```
 
-### 2) 创建数据库
+### Step 2. 初始化数据库
 
 ```sql
 CREATE DATABASE paper_hub CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 
-### 3) 配置后端环境变量
+### Step 3. 配置后端环境变量
 
 ```bash
 cd backend
 cp .env.example .env
 ```
 
-至少要填写以下字段：
+编辑 `backend/.env`，至少填写：
 
 - `DATABASE_URL`
 - `SECRET_KEY`
@@ -140,12 +141,11 @@ cp .env.example .env
 - `DEEPSEEK_BASE_URL`
 - `DEEPSEEK_MODEL`
 
-如果要开启管理员账号，请在 `.env` 设置：
+如果你需要管理员后台权限，设置：
 
-- `ADMIN_USERNAMES=你的用户名`  
-例如：`ADMIN_USERNAMES=manager1,admin`
+- `ADMIN_USERNAMES=manager1,admin`（示例）
 
-### 4) 安装后端依赖并启动
+### Step 4. 启动后端
 
 ```bash
 cd backend
@@ -155,7 +155,7 @@ python app.py
 
 后端默认地址：`http://localhost:5001`
 
-### 5) 安装前端依赖并启动
+### Step 5. 启动前端
 
 ```bash
 cd frontend
@@ -164,35 +164,33 @@ npm run dev
 ```
 
 前端默认地址：`http://localhost:3000`  
-开发环境中，Vite 会把 `/api` 请求代理到 `5001`。
+开发环境中，Vite 会把 `/api` 请求代理到后端 `5001`。
 
-### 6) 首次使用建议
+### Step 6. 首次功能验收（推荐按顺序）
 
-- 先注册一个普通用户，确认基本浏览和检索功能正常。
-- 再使用管理员用户名登录，确认后台页可访问。
-- 上传一篇测试 PDF，走一遍“投稿 -> 审核 -> 公示”的完整流程。
+1. 注册普通用户并登录  
+2. 检查 `系统论文库` 是否可浏览  
+3. 打开 `每日推荐` 查看卡片是否加载  
+4. 发布一条评论，测试互动链路  
+5. 用管理员账号登录，确认 `管理员后台` 可访问  
+6. 在 `创作者中心` 上传一篇测试 PDF，走一遍“投稿 -> 审核 -> 公示”
 
 ## 🧪 常用开发命令
 
 ```bash
-# 启动后端
+# 后端启动
 cd backend && python app.py
 
-# 启动前端
+# 前端开发
 cd frontend && npm run dev
 
 # 前端构建
 cd frontend && npm run build
 ```
 
-## 🤝 协作与提交规范
+## 🔐 隐私与数据策略（协作开发重点）
 
-- 只提交功能代码、配置模板和文档。
-- 不提交 PDF、用户隐私数据、密钥、缓存、日志。
-- 分支建议：`feature/*`、`fix/*`、`chore/*`。
-- Commit 建议使用约定式前缀：`feat:` `fix:` `chore:` `docs:`。
-
-本仓库 `.gitignore` 已排除：
+本仓库仅提交“功能代码 + 配置模板 + 文档”。以下内容默认不入库：
 
 - `docs/`、`backend/docs/`、`figures/`
 - `pic/`（含头像等素材）
@@ -200,23 +198,30 @@ cd frontend && npm run build
 - `backend/embeddings_cache.npz`
 - `backend/knowledge_trends_cache.json`
 
-## ❓常见问题（FAQ）
+## 🤝 协作规范
 
-### 1. 前端能打开，但接口 401 或 403？
+- 建议分支命名：`feature/*`、`fix/*`、`chore/*`
+- 建议提交前缀：`feat:` `fix:` `chore:` `docs:`
+- 提交前自查：是否误包含隐私/大文件
 
-- 检查是否已登录并带 JWT。
-- 检查管理员接口是否使用了管理员账号（`ADMIN_USERNAMES`/`ADMIN_EMAILS`）。
+## ❓FAQ
 
-### 2. 推荐任务为什么不触发？
+### 1) 前端打开了，但接口返回 401/403？
 
-- 确认后端进程未退出。
-- 检查 `scheduler.py` 日志以及 `.env` 的推荐任务配置。
+- 检查是否已登录并携带 JWT
+- 检查管理员接口是否用了管理员账号（`ADMIN_USERNAMES`/`ADMIN_EMAILS`）
 
-### 3. AI 总结没有生成？
+### 2) 推荐任务为什么没触发？
 
-- 检查 `DEEPSEEK_API_KEY` 与 `DEEPSEEK_BASE_URL`。
-- 检查 PDF 是否下载成功，以及网络是否可访问对应源站。
+- 确认后端进程正常运行
+- 检查 `scheduler.py` 日志以及 `.env` 的推荐任务配置
+
+### 3) AI 总结没有生成？
+
+- 检查 `DEEPSEEK_API_KEY` 与 `DEEPSEEK_BASE_URL`
+- 检查 PDF 是否下载成功、外部源站是否可访问
 
 ## 📄 许可证
 
 本项目使用 [MIT License](./LICENSE)。
+
