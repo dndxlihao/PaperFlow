@@ -1,5 +1,12 @@
 # PaperFlow
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+![Backend](https://img.shields.io/badge/Backend-Flask%20%7C%20SQLAlchemy-1f6feb)
+![Frontend](https://img.shields.io/badge/Frontend-React%20%7C%20Vite-61dafb)
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB)
+![Node](https://img.shields.io/badge/Node.js-18%2B-339933)
+![Status](https://img.shields.io/badge/Status-Active-success)
+
 > 一个面向学术协作与论文内容沉淀的平台。  
 > 支持论文检索、AI 总结、评论互动、创作者投稿、管理员审核与知识热点分析。
 
@@ -32,6 +39,43 @@ PaperFlow 聚焦“学术内容协同生产”：
 | AI 能力 | OpenAI SDK（兼容 DeepSeek Base URL） |
 | 文献处理 | requests / selenium / pdfplumber |
 | 鉴权 | JWT |
+
+## 🏗️ 系统架构图
+
+```mermaid
+flowchart LR
+  U[👤 用户浏览器] --> FE[🎨 Frontend<br/>React + Vite]
+  FE -->|/api| BE[⚙️ Backend API<br/>Flask Blueprints]
+
+  subgraph BackendServices[🧩 后端服务层]
+    Auth[auth.py<br/>登录/鉴权]
+    Papers[papers.py<br/>论文/评论/投稿]
+    Rec[recommend.py<br/>推荐接口]
+    KB[knowledge.py<br/>知识库检索]
+    Admin[admin.py<br/>后台运营]
+    Sch[scheduler.py<br/>定时任务]
+    DU[daily_update.py<br/>每日推荐生成]
+  end
+
+  BE --> Auth
+  BE --> Papers
+  BE --> Rec
+  BE --> KB
+  BE --> Admin
+  BE --> Sch
+  Sch --> DU
+
+  DU --> LLM[🤖 LLM API<br/>DeepSeek/OpenAI Compatible]
+  Papers --> LLM
+  KB --> IDX[🧠 向量索引/检索缓存]
+
+  Auth --> DB[(🗄️ MySQL)]
+  Papers --> DB
+  Rec --> DB
+  KB --> DB
+  Admin --> DB
+  DU --> DB
+```
 
 ## 🗃️ 目录结构
 
